@@ -14,6 +14,8 @@ public class MovmentController : MonoBehaviour
 
     public bool invert;
 
+    public float maxSpeed;
+
     private float turnVal;
     private float accVal;
 
@@ -33,10 +35,20 @@ public class MovmentController : MonoBehaviour
     private void Rotate()
     {
         transform.Rotate(transform.forward,turnSpeed * turnVal);
+        body.angularVelocity = 0;
     }
 
     private void Move()
     {
+
+        
         body.velocity += (Vector2) transform.up * accVal * moveSpeed * Time.deltaTime;
+
+
+
+        if (body.velocity.magnitude > maxSpeed)
+        {
+            body.velocity = body.velocity.normalized * maxSpeed;
+        }
     }
 }

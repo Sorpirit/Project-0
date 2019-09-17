@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7542949454887338241}
   - component: {fileID: 7542949454887338246}
   - component: {fileID: 7542949454887338247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,3 +147,4 @@ MonoBehaviour:
   moveSpeed: 5
   body: {fileID: 7542949454887338241}
   invert: 0
+  maxSpeed: 10
