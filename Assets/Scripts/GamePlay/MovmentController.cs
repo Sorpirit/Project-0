@@ -8,11 +8,15 @@ public class MovmentController : MonoBehaviour
     public string VertAxis;
 
     public float turnSpeed;
-    public float moveSpeed;
+    public float accSpeed;
+    public float decSpeed;
+
+    public float maxSpeed;
 
     public Rigidbody2D body;
 
-    public bool invert;
+    public bool invertInput;
+    public bool autoBalance;
 
     private float turnVal;
     private float accVal;
@@ -20,8 +24,9 @@ public class MovmentController : MonoBehaviour
     private void Update()
     {
         turnVal = -Input.GetAxis(HorizAxis);
-        turnVal *= invert ? -1 : 1;
+        turnVal *= invertInput ? -1 : 1;
         accVal = Input.GetAxis(VertAxis);
+        accVal *= invertInput ? -1 : 1;
     }
 
     private void FixedUpdate()
@@ -32,11 +37,27 @@ public class MovmentController : MonoBehaviour
 
     private void Rotate()
     {
-        transform.Rotate(transform.forward,turnSpeed * turnVal);
+        //transform.Rotate(transform.up, turnSpeed * turnVal);
+        //transform.eulerAngles += Vector3.forward * ;
+        // = ;
+        //Quaternion.FromToRotation(transform.up, Vector3.forward * turnSpeed * turnVal);
+        transform.up = Quaternion.Euler(0,0,turnVal * turnSpeed) * transform.up;
     }
 
     private void Move()
     {
-        body.velocity += (Vector2) transform.up * accVal * moveSpeed * Time.deltaTime;
+        body.velocity += (Vector2) transform.up * accVal * accSpeed * Time.deltaTime;
+
+        if (autoBalance && accVal == 0) AutoBalanceSpeed();
+
+        if (body.velocity.magnitude > maxSpeed)
+        {
+            body.velocity = body.velocity.normalized * maxSpeed;
+        }
+    }
+
+    private void AutoBalanceSpeed()
+    {
+        body.velocity += (Vector2) (-body.velocity.normalized) * decSpeed * Time.deltaTime;
     }
 }
