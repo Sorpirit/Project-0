@@ -40,6 +40,6 @@ public class Pause : MonoBehaviour
         PauseButtonUI.SetActive(false);
         ResumeButtonUI.SetActive(false);
         JustSettingsUI.SetActive(true);
-        ResumeButtonToUI.SetActive(true);
+        ResumeButtonToUI.SetActive(false);
     }
 }

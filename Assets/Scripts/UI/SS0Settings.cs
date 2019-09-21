@@ -13,6 +13,9 @@ public class SS0Settings : MonoBehaviour
     GameObject Graphix;
     GameObject Social;
     GameObject Help;
+    public GameObject PauseUI;
+    public GameObject ResumeButtonUI;
+    public GameObject JustSettingsUI;
 
     void Start()
     {
@@ -48,6 +51,7 @@ public class SS0Settings : MonoBehaviour
         Social.SetActive(false);
         Help.SetActive(false);
         Settings.SetActive(true);
+
     }
     public void GoToGeneralSettings()
     {
@@ -96,5 +100,12 @@ public class SS0Settings : MonoBehaviour
         Debug.Log("going to Help settings...");
         Help.SetActive(true);
         Settings.SetActive(false);
+    }
+    public void GoToPause()
+    {
+        Debug.Log("going to pause menu...");
+        JustSettingsUI.SetActive(false);
+        PauseUI.SetActive(true);
+        ResumeButtonUI.SetActive(true);
     }
 }
