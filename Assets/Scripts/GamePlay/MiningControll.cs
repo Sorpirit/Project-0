@@ -5,28 +5,59 @@ using UnityEngine;
 public class MiningControll : MonoBehaviour
 {
     public KeyCode mineButton;
+    public string mineAxis;
 
     private int layerMasks;
 
+    [SerializeField] private LineRenderer[] minigLines;
+    [SerializeField] private Transform[] startPoints;
+    [SerializeField] private Transform focusPoint;
+
+    public float maxMagnitude; 
+ 
+    private float focusPointOfset;
+
     private void Start()
     {
-        layerMasks = ~(1 << LayerMask.NameToLayer("Player"));
+        layerMasks = ~(1 << LayerMask.NameToLayer("Player"));// Ignore Player mask
         //layerMasks = ~layerMasks;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(mineButton)) Mine();
+        if (Input.GetKey(mineButton))
+        {
+            focusPointOfset += Input.GetAxis(mineAxis);
+            Mine();
+        }
     }
 
     private void Mine()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity, layerMasks);
+        
+        for(int i =0; i < Mathf.Min(minigLines.Length,startPoints.Length); i++)
+        {
+            chekHit(i);
+        }
+        
+    }
+
+    private void chekHit(int index)
+    {
+        Vector2 dir = ((focusPoint.position + transform.up * focusPointOfset) - startPoints[index].position).normalized;
+        RaycastHit2D hitInfo = Physics2D.Raycast(startPoints[index].position, dir, maxMagnitude, layerMasks);
 
         if (hitInfo)
         {
-            
-            Debug.Log(hitInfo.transform.name);
+            minigLines[index].SetPosition(0, startPoints[index].position);
+            minigLines[index].SetPosition(1, hitInfo.point);
         }
+        else
+        {
+            minigLines[index].SetPosition(0, startPoints[index].position);
+            minigLines[index].SetPosition(1, dir * 10 + (Vector2) transform.position);
+        }
+
     }
+
 }

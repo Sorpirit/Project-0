@@ -5543,18 +5543,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineButton: 32
-  mineAxis: 
+  mineAxis: Mouse ScrollWheel
   minigLines:
   - {fileID: 4054954258434918774}
-  - {fileID: 3004778375677717978}
   - {fileID: 3953699696962923373}
+  - {fileID: 3004778375677717978}
   startPoints:
   - {fileID: 3724642839225341811}
   - {fileID: 3492513474264779768}
   - {fileID: 2566554559455296410}
   focusPoint: {fileID: 775833661}
   maxMagnitude: 10
-  mouseWheleSensivyty: 0.15
 --- !u!1 &7641099539474587403
 GameObject:
   m_ObjectHideFlags: 0
