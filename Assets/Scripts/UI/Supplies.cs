@@ -44,11 +44,15 @@ public class Supplies : MonoBehaviour
         {
             Oxygen = OxygenStorage;
         }
+        if (Oxygen <= 0)
+        {
+            Oxygen = 0;
+        }
         OxygenText.text = "Oxygen: " + Oxygen;
         //Finding Water Storage Modules and Making sure that there isnt more Water then the storage you have for it
         WaStorageModule = GameObject.FindGameObjectsWithTag("WaterStorageModule");
         WaterStorageModuleAmount = 0;
-        foreach (GameObject O in WaStorageModule)
+        foreach (GameObject A in WaStorageModule)
         {
             WaterStorageModuleAmount += 1;
         }
@@ -57,11 +61,15 @@ public class Supplies : MonoBehaviour
         {
             Water = WaterStorage;
         }
+        if (Water <= 0)
+        {
+            Water = 0;
+        }
         WaterText.text = "Water: " + Water;
         //Finding Food Storage Modules and Making sure that there isnt more Water then the Food you have for it
         FoStorageModule = GameObject.FindGameObjectsWithTag("FoodStorageModule");
         FoodStorageModuleAmount = 0;
-        foreach (GameObject O in FoStorageModule)
+        foreach (GameObject B in FoStorageModule)
         {
             FoodStorageModuleAmount += 1;
         }
@@ -70,11 +78,15 @@ public class Supplies : MonoBehaviour
         {
             Food = FoodStorage;
         }
+        if (Food <= 0)
+        {
+            Food = 0;
+        }
         FoodText.text = "Food: " + Food;
         //Finding Energy Storage Modules and Making sure that there isnt more Energy then the storage you have for it
         EnStorageModule = GameObject.FindGameObjectsWithTag("EnergyStorageModule");
         EnergyStorageModuleAmount = 0;
-        foreach (GameObject O in EnStorageModule)
+        foreach (GameObject C in EnStorageModule)
         {
             EnergyStorageModuleAmount += 1;
         }
@@ -82,6 +94,10 @@ public class Supplies : MonoBehaviour
         if (Energy >= EnergyStorage)
         {
             Energy = EnergyStorage;
+        }
+        if (Energy <= 0)
+        {
+            Energy = 0;
         }
         EnergyText.text = "Energy: " + Energy;
     }
