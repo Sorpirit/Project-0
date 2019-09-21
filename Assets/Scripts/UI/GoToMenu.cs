@@ -9,5 +9,6 @@ public class GoToMenu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneBuildIndex: 0);
         Debug.Log("going to main menu...");
+        Time.timeScale = 1f;
     }
 }

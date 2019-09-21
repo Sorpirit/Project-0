@@ -23,6 +23,7 @@ public class Pause : MonoBehaviour
         PausePanelUI.SetActive(true);
         PauseButtonUI.SetActive(false);
         ResumeButtonUI.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void ClosePause()
     {
@@ -31,6 +32,7 @@ public class Pause : MonoBehaviour
         PauseButtonUI.SetActive(true);
         ResumeButtonUI.SetActive(false);
         JustSettingsUI.SetActive(false);
+        Time.timeScale = 1f;
 
     }
     public void OpenSettings()
