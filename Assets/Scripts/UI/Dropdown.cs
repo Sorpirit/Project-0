@@ -10,7 +10,7 @@ public class Dropdown : MonoBehaviour, IPointerClickHandler
     public int i;
     void Start()
     {
-        container = transform.FindChild("Container").GetComponent<RectTransform>();
+        container = transform.Find("Container").GetComponent<RectTransform>();
         isOpen = false;
     }
 
