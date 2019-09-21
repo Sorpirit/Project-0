@@ -311,6 +311,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3012561856375230704, guid: 3f4c490f437f242708ca07a11cf1ea62,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3012561856375230701, guid: 3f4c490f437f242708ca07a11cf1ea62, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4c490f437f242708ca07a11cf1ea62, type: 3}
