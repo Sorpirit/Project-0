@@ -16,6 +16,11 @@ TagManager:
   - HelpPanel
   - SocialPanel
   - PauseMenu
+  - ResumeButton
+  - OxygenStorageModule
+  - WaterStorageModule
+  - FoodStorageModule
+  - EnergyStorageModule
   layers:
   - Default
   - TransparentFX
