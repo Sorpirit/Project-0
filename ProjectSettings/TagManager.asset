@@ -21,6 +21,10 @@ TagManager:
   - WaterStorageModule
   - FoodStorageModule
   - EnergyStorageModule
+  - HydrogenStorageModule
+  - ElectricStorageModule
+  - NuclearStorageModule
+  - WarpStorageModule
   layers:
   - Default
   - TransparentFX
