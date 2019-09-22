@@ -6411,10 +6411,10 @@ MonoBehaviour:
   - {fileID: 2566554559455296410}
   focusPoint: {fileID: 775833661}
   maxMagnitude: 10
-  laserDamage: 10
+  laserDamage: 30
   nonFocusDecrising: 0.75
   damageRate: 0.2
-  focusMinDistanc: 0.2
+  focusMinDistanc: 0.5
 --- !u!1 &7641099539474587403
 GameObject:
   m_ObjectHideFlags: 0
