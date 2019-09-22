@@ -55,7 +55,7 @@ public class MovmentController : MonoBehaviour
         if (body.velocity.magnitude > maxSpeed)
         {
             body.velocity = body.velocity.normalized * maxSpeed;
-            take.takeHy();
+            //take.takeHy();
         }
     }
 
