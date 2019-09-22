@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovmentController : MonoBehaviour
 {
+    public TakeFuel take;
+
     public string HorizAxis;
     public string VertAxis;
 
@@ -53,6 +55,7 @@ public class MovmentController : MonoBehaviour
         if (body.velocity.magnitude > maxSpeed)
         {
             body.velocity = body.velocity.normalized * maxSpeed;
+            take.takeHy();
         }
     }
 
