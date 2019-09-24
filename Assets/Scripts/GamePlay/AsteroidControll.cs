@@ -27,15 +27,6 @@ public class AsteroidControll : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         initialColor = sprite.color;
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-
-        }
-    }
-
     private void LateUpdate()
     {
         if (!isHited) Heal();
