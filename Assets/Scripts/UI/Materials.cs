@@ -101,4 +101,8 @@ public class Materials : MonoBehaviour
 		}
 		Material3Text.text = "Material3: " + Material3;
 	}
+    public void AddMaterial0()
+    {
+        Material0 += 1;
+    }
 }

@@ -25,6 +25,11 @@ TagManager:
   - ElectricStorageModule
   - NuclearStorageModule
   - WarpStorageModule
+  - Material0StorageModule
+  - Material1StorageModule
+  - Material2StorageModule
+  - Material3StorageModule
+  - MaterialManager
   layers:
   - Default
   - TransparentFX

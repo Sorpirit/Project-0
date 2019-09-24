@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AsteroidControll : MonoBehaviour
 {
+    GameObject Mat0;
+
     [SerializeField] private float maxHp;
     private float hp;
     [SerializeField] private float healPoints;
@@ -18,6 +20,8 @@ public class AsteroidControll : MonoBehaviour
     //private 
     private void Start()
     {
+        Mat0 = GameObject.FindGameObjectWithTag("MaterialManager");
+
         hp = maxHp;
 
         sprite = GetComponent<SpriteRenderer>();
@@ -66,6 +70,8 @@ public class AsteroidControll : MonoBehaviour
 
     private void crateSmallerAsteroid()
     {
+        Mat0.GetComponent<Materials>().AddMaterial0();
+
         GameObject aster = Instantiate(asteroid, transform.position,Quaternion.identity);
 
         float xScale = Random.Range( transform.localScale.x * 0.1f, transform.localScale.x);
