@@ -101,4 +101,36 @@ public class Fuels : MonoBehaviour
         }
         WarpText.text = "Warp: " + Warp;
     }
+    public void AddHydrogen()
+    {
+        Hydrogen += 1;
+    }
+    public void AddElectric()
+    {
+        Electric += 1;
+    }
+    public void AddNuclear()
+    {
+        Nuclear += 1;
+    }
+    public void AddWarp()
+    {
+        Warp += 1;
+    }
+    public void TakeHydrogen()
+    {
+        Hydrogen -= 1;
+    }
+    public void TakeElectric()
+    {
+        Electric -= 1;
+    }
+    public void TakeNuclear()
+    {
+        Nuclear -= 1;
+    }
+    public void TakeWarp()
+    {
+        Warp -= 1;
+    }
 }

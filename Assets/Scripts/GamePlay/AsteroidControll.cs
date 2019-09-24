@@ -28,6 +28,14 @@ public class AsteroidControll : MonoBehaviour
         initialColor = sprite.color;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+
+        }
+    }
+
     private void LateUpdate()
     {
         if (!isHited) Heal();
