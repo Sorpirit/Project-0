@@ -117,4 +117,20 @@ public class Supplies : MonoBehaviour
     {
         Energy += 1;
     }
+    public void TakeOxygen()
+    {
+        Oxygen -= 1;
+    }
+    public void TakeWater()
+    {
+        Water -= 1;
+    }
+    public void TakeFood()
+    {
+        Food -= 1;
+    }
+    public void TakeEnergy()
+    {
+        Energy -= 1;
+    }
 }

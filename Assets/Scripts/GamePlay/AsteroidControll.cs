@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AsteroidControll : MonoBehaviour
 {
-    GameObject Mat0;
+    GameObject Mat;
 
     [SerializeField] private float maxHp;
     private float hp;
@@ -20,7 +20,7 @@ public class AsteroidControll : MonoBehaviour
     //private 
     private void Start()
     {
-        Mat0 = GameObject.FindGameObjectWithTag("MaterialManager");
+        Mat = GameObject.FindGameObjectWithTag("MaterialManager");
 
         hp = maxHp;
 
@@ -70,7 +70,7 @@ public class AsteroidControll : MonoBehaviour
 
     private void crateSmallerAsteroid()
     {
-        Mat0.GetComponent<Materials>().AddMaterial0();
+        Mat.GetComponent<Materials>().AddMaterial0();
 
         GameObject aster = Instantiate(asteroid, transform.position,Quaternion.identity);
 

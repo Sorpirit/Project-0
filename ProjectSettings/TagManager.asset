@@ -30,6 +30,7 @@ TagManager:
   - Material2StorageModule
   - Material3StorageModule
   - MaterialManager
+  - SuppliesManager
   layers:
   - Default
   - TransparentFX
