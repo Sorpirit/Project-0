@@ -105,4 +105,16 @@ public class Materials : MonoBehaviour
     {
         Material0 += 1;
     }
+    public void AddMaterial1()
+    {
+        Material1 += 1;
+    }
+    public void AddMaterial2()
+    {
+        Material2 += 1;
+    }
+    public void AddMaterial3()
+    {
+        Material3 += 1;
+    }
 }

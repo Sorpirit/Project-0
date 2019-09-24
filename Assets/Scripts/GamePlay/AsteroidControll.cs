@@ -85,6 +85,5 @@ public class AsteroidControll : MonoBehaviour
             
             asterRb.AddForce(new Vector2(xScale,yScale).normalized, ForceMode2D.Impulse);
         }
-
     }
 }
