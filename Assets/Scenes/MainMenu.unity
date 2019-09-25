@@ -396,6 +396,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToSettings
       objectReference: {fileID: 0}
+    - target: {fileID: 3012561856481951914, guid: 3f4c490f437f242708ca07a11cf1ea62,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 89ea2db91207e4e2c8888e9b8d167fd3,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 3012561856375230701, guid: 3f4c490f437f242708ca07a11cf1ea62, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4c490f437f242708ca07a11cf1ea62, type: 3}
