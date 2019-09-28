@@ -4,8 +4,44 @@ using UnityEngine;
 
 public class TakeFuel : MonoBehaviour
 {
-    public void takeHy()
+
+    public int maxFuel;
+    private float fuel;
+
+    public bool isDebuging;
+
+    private void Awake()
     {
-        Debug.Log("fuel-1");
+        fuel = maxFuel;
     }
+
+    public void UseFuel(float value)
+    {
+        fuel -= Time.deltaTime * value;
+        Debug.Log(fuel + " fuel");
+        if (fuel < 0) fuel = 0;
+    }
+
+    public void AddFuel(float value)
+    {
+        fuel += value;
+
+        if (fuel > maxFuel) fuel = maxFuel;
+    }
+
+    public bool isTankEmpty()
+    {
+        return fuel <= 0;
+    }
+
+    private void LateUpdate()
+    {
+        if (isDebuging) Debuging();
+    }
+
+    private void Debuging()
+    {
+        Debug.Log("mfuel = " + maxFuel + " .\nFule =  .");
+    }
+
 }
