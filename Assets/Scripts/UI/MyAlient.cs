@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class MyAlient : MonoBehaviour
 {
-    float Ali;
     float elapsed = 0f;
     public GameObject Sup;
     void Update()
     {
         elapsed += Time.deltaTime;
-        if (elapsed >= 60f)
+        if (elapsed >= 3f)
         {
             elapsed = elapsed % 1f;
             Sup.GetComponent<Supplies>().TakeOxygen();
