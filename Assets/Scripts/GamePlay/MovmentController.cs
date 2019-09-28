@@ -34,7 +34,9 @@ public class MovmentController : MonoBehaviour
     private void FixedUpdate()
     { 
         Rotate();
-        Move();
+
+        if(!take.isTankEmpty())
+            Move();
     }
 
     private void Rotate()
@@ -50,17 +52,20 @@ public class MovmentController : MonoBehaviour
     {
         body.velocity += (Vector2) transform.up * accVal * accSpeed * Time.deltaTime;
 
+        take.UseFuel(accVal);
+
         if (autoBalance && accVal == 0) AutoBalanceSpeed();
 
         if (body.velocity.magnitude > maxSpeed)
         {
             body.velocity = body.velocity.normalized * maxSpeed;
-            //take.takeHy();
         }
     }
 
     private void AutoBalanceSpeed()
     {
         body.velocity += (Vector2) (-body.velocity.normalized) * decSpeed * Time.deltaTime;
+
+        if (body.velocity.magnitude < 0.2f) body.velocity = Vector2.zero;
     }
 }

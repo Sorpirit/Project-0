@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AsteroidControll : MonoBehaviour
 {
@@ -17,7 +15,7 @@ public class AsteroidControll : MonoBehaviour
 
     private Color initialColor;
     private bool isHited;
-    //private 
+
     private void Start()
     {
         Mat = GameObject.FindGameObjectWithTag("MaterialManager");
@@ -63,7 +61,6 @@ public class AsteroidControll : MonoBehaviour
     {
         float chengVal = hp / maxHp;
         Color nColor = new Color(initialColor.r, initialColor.g * chengVal, initialColor.b * chengVal);
-        Debug.Log(nColor);
         sprite.color = nColor;
     }
 
