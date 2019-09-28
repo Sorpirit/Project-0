@@ -13,6 +13,7 @@ public class SS0Settings : MonoBehaviour
     GameObject Graphix;
     GameObject Social;
     GameObject Help;
+    public GameObject DethUI;
     public GameObject PauseUI;
     public GameObject ResumeButtonUI;
     public GameObject JustSettingsUI;
@@ -38,6 +39,7 @@ public class SS0Settings : MonoBehaviour
         Graphix.SetActive(false);
         Social.SetActive(false);
         Help.SetActive(false);
+        DethUI.SetActive(false);
     }
     public void GoToSettings()
     {

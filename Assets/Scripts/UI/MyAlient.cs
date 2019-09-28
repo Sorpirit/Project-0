@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MyAlient : MonoBehaviour
 {
-    public GameObject Sup;
+    float Ali;
     float elapsed = 0f;
+    public GameObject Sup;
     void Update()
     {
         elapsed += Time.deltaTime;

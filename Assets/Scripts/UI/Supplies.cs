@@ -5,33 +5,81 @@ using UnityEngine.UI;
 
 public class Supplies : MonoBehaviour
 {
-    int Oxygen;
-    int Water;
-    int Food;
-    int Energy;
+    public GameObject DethUI;
+
+    int Oxygen = 10;
+    int Water = 20;
+    int Food = 20;
+    int Energy = 20;
+    int AlientAmount;
+
     int OxygenStorage;
     int WaterStorage;
     int FoodStorage;
     int EnergyStorage;
+    int AlientStorage;
+
     public int OxygenStorageModule = 50;
     public int WaterStorageModule = 50;
     public int FoodStorageModule = 50;
     public int EnergyStorageModule = 50;
+    public int AlientStorageModule = 50;
+
     int OxygenStorageModuleAmount;
     int WaterStorageModuleAmount;
     int FoodStorageModuleAmount;
     int EnergyStorageModuleAmount;
+    int AlientStorageModuleAmount;
+
     GameObject[] OxStorageModule;
     GameObject[] WaStorageModule;
     GameObject[] FoStorageModule;
     GameObject[] EnStorageModule;
+    GameObject[] AlStorageModule;
+    GameObject[] AllAlients;
+
+    GameObject Alient;
+    int index;
+
     public Text OxygenText;
     public Text WaterText;
     public Text FoodText;
     public Text EnergyText;
+    public Text AlientText;
 
     void Update()
     {
+        AllAlients = GameObject.FindGameObjectsWithTag("Alient");
+        if (AlientAmount >= 2)
+        {
+            Alient = AllAlients[index];
+        }
+        if (AlientAmount <= 1)
+        {
+            Alient = GameObject.FindGameObjectWithTag("Alient");
+        }
+        index = Random.Range(0, AllAlients.Length);
+        AlientAmount = 0;
+        foreach (GameObject K in AllAlients)
+        {
+            AlientAmount += 1;
+        }
+        AlStorageModule = GameObject.FindGameObjectsWithTag("AlientStorageModule");
+        AlientStorageModuleAmount = 0;
+        foreach (GameObject L in AlStorageModule)
+        {
+            AlientStorageModuleAmount += 1;
+        }
+        AlientStorage = AlientStorageModule * AlientStorageModuleAmount;
+        if (AlientAmount >= AlientStorage)
+        {
+            AlientAmount = AlientStorage;
+        }
+        if (AlientAmount <= 0)
+        {
+            AlientAmount = 0;
+        }
+        AlientText.text = "Alients: " + AlientAmount;
         //Finding Oxygen Storage Modules and Making sure that there isnt more Oxygen then the storage you have for it
         OxStorageModule = GameObject.FindGameObjectsWithTag("OxygenStorageModule");
         OxygenStorageModuleAmount = 0;
@@ -100,6 +148,7 @@ public class Supplies : MonoBehaviour
             Energy = 0;
         }
         EnergyText.text = "Energy: " + Energy;
+        JustDie();
     }
     public void AddOxygen()
     {
@@ -119,18 +168,113 @@ public class Supplies : MonoBehaviour
     }
     public void TakeOxygen()
     {
-        Oxygen -= 1;
+        if (Oxygen >= 1)
+        {
+            Oxygen -= 1;
+        }
     }
     public void TakeWater()
     {
-        Water -= 1;
+        if (Water >= 1)
+        {
+            Water -= 1;
+        }
     }
     public void TakeFood()
     {
-        Food -= 1;
+        if (Food >= 1)
+        {
+            Food -= 1;
+        }
     }
     public void TakeEnergy()
     {
-        Energy -= 1;
+        if (Energy >= 1)
+        {
+            Energy -= 1;
+        }
+    }
+    public void JustDie()
+    {
+        if (Oxygen < AlientAmount)
+        {
+            if (AlientAmount > Oxygen)
+            {
+                Destroy(Alient);
+            }
+            if (Oxygen == 0)
+            {
+                foreach (GameObject go in AllAlients)
+                {
+                    Destroy(go);
+                }
+                AlientAmount = 0;
+            }
+            if (AlientAmount <= 0)
+            {
+                DethUI.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+        if (Water < AlientAmount)
+        {
+            if (AlientAmount > Water)
+            {
+                Destroy(Alient);
+            }
+            if (Water == 0)
+            {
+                foreach (GameObject go in AllAlients)
+                {
+                    Destroy(go);
+                }
+                AlientAmount = 0;
+            }
+            if (AlientAmount <= 0)
+            {
+                DethUI.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+        if (Food < AlientAmount)
+        {
+            if (AlientAmount > Food)
+            {
+                Destroy(Alient);
+            }
+            if (Food == 0)
+            {
+                foreach (GameObject go in AllAlients)
+                {
+                    Destroy(go);
+                }
+                AlientAmount = 0;
+            }
+            if (AlientAmount <= 0)
+            {
+                DethUI.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+        if (Energy < AlientAmount)
+        {
+            if (AlientAmount > Energy)
+            {
+                Destroy(Alient);
+            }
+            if (Energy == 0)
+            {
+                foreach (GameObject go in AllAlients)
+                {
+                    Destroy(go);
+                }
+                AlientAmount = 0;
+            }
+            if (AlientAmount <= 0)
+            {
+                DethUI.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
     }
 }
