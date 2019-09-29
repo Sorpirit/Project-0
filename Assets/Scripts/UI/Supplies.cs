@@ -8,9 +8,9 @@ public class Supplies : MonoBehaviour
     public GameObject DethUI;
 
     int Oxygen = 10;
-    int Water = 20;
-    int Food = 20;
-    int Energy = 20;
+    int Water = 50;
+    int Food = 50;
+    int Energy = 50;
     int AlientAmount;
 
     public int ChekSup;

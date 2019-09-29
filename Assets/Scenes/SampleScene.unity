@@ -1729,6 +1729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388397247}
   - component: {fileID: 388397246}
+  - component: {fileID: 388397248}
   m_Layer: 0
   m_Name: GeneratorsManager
   m_TagString: Untagged
@@ -1780,6 +1781,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &388397248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388397245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b656c6bff14405fb6e853499393742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  supplies: {fileID: 1409423997}
+  fuels: {fileID: 528904537}
+  MakeEnergy: 0
+  MakeElectric: 0
 --- !u!114 &411891183 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
