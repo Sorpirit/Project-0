@@ -13,10 +13,16 @@ public class Supplies : MonoBehaviour
     int Energy = 20;
     int AlientAmount;
 
-    int OxygenStorage;
-    int WaterStorage;
-    int FoodStorage;
-    int EnergyStorage;
+    public int ChekSup;
+    public int ChekOx;
+    public int ChekWa;
+    public int ChekFo;
+    public int ChekEn;
+
+    public int OxygenStorage;
+    public int WaterStorage;
+    public int FoodStorage;
+    public int EnergyStorage;
     int AlientStorage;
 
     public int OxygenStorageModule = 50;
@@ -50,6 +56,7 @@ public class Supplies : MonoBehaviour
 
     void Update()
     {
+        ChekingSup();
         if (AlientAmount <= OldAli - 1)
         {
             index = Random.Range(0, AllAlients.Length);
@@ -285,5 +292,32 @@ public class Supplies : MonoBehaviour
                 Time.timeScale = 0f;
             }
         }
+    }
+    public void ChekingSup()
+    {
+        if (Oxygen == 0)
+        {
+            ChekSup = 0;
+            ChekOx = 0;
+        }
+        if (Water == 0)
+        {
+            ChekSup = 0;
+            ChekWa = 0;
+        }
+        if (Food == 0)
+        {
+            ChekSup = 0;
+            ChekFo = 0;
+        }
+        if (Energy == 0)
+        {
+            ChekSup = 0;
+            ChekEn = 0;
+        }
+        ChekOx = Oxygen;
+        ChekWa = Water;
+        ChekFo = Food;
+        ChekEn = Energy;
     }
 }

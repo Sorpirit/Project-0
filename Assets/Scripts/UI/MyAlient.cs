@@ -9,7 +9,7 @@ public class MyAlient : MonoBehaviour
     void Update()
     {
         elapsed += Time.deltaTime;
-        if (elapsed >= 3f)
+        if (elapsed >= 60f)
         {
             elapsed = elapsed % 1f;
             Sup.GetComponent<Supplies>().TakeOxygen();

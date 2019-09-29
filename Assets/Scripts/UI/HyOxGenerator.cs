@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HyOxGenerator : MonoBehaviour
 {
+    int ChekEnWa;
+    int DobleChek;
+
+    public Supplies supplies;
+    public Fuels fuels;
     public GameObject Sup;
     public GameObject Fuel;
     public GameObject HyOxLvl0;
@@ -50,16 +55,16 @@ public class HyOxGenerator : MonoBehaviour
     }
     void Update()
     {
+        ChekEnWa = 0;
+        ChekingHyOx();
         if (HyOxBool0 == true)
         {
+            if (ChekEnWa >= 1)
             elapsed0 += Time.deltaTime;
             if (elapsed0 >= 60f)
             {
                 elapsed0 = elapsed0 % 1f;
-                Sup.GetComponent<Supplies>().TakeWater();
-                Fuel.GetComponent<Fuels>().TakeElectric();
-                Fuel.GetComponent<Fuels>().AddHydrogen();
-                Sup.GetComponent<Supplies>().AddOxygen();
+                GenerateHyOx();
             }
         }
         if (HyOxBool1 == true)
@@ -68,10 +73,7 @@ public class HyOxGenerator : MonoBehaviour
             if (elapsed2 >= 30f)
             {
                 elapsed2 = elapsed2 % 1f;
-                Sup.GetComponent<Supplies>().TakeWater();
-                Fuel.GetComponent<Fuels>().TakeElectric();
-                Fuel.GetComponent<Fuels>().AddHydrogen();
-                Sup.GetComponent<Supplies>().AddOxygen();
+                GenerateHyOx();
             }
         }
         if (HyOxBool2 == true)
@@ -80,10 +82,7 @@ public class HyOxGenerator : MonoBehaviour
             if (elapsed2 >= 10f)
             {
                 elapsed2 = elapsed2 % 1f;
-                Sup.GetComponent<Supplies>().TakeWater();
-                Fuel.GetComponent<Fuels>().TakeElectric();
-                Fuel.GetComponent<Fuels>().AddHydrogen();
-                Sup.GetComponent<Supplies>().AddOxygen();
+                GenerateHyOx();
             }
         }
         if (HyOxBool3 == true)
@@ -92,10 +91,7 @@ public class HyOxGenerator : MonoBehaviour
             if (elapsed3 >= 5f)
             {
                 elapsed3 = elapsed3 % 1f;
-                Sup.GetComponent<Supplies>().TakeWater();
-                Fuel.GetComponent<Fuels>().TakeElectric();
-                Fuel.GetComponent<Fuels>().AddHydrogen();
-                Sup.GetComponent<Supplies>().AddOxygen();
+                GenerateHyOx();
             }
         }
         if (HyOxBool4 == true)
@@ -104,10 +100,7 @@ public class HyOxGenerator : MonoBehaviour
             if (elapsed4 >= 2f)
             {
                 elapsed4 = elapsed4 % 1f;
-                Sup.GetComponent<Supplies>().TakeWater();
-                Fuel.GetComponent<Fuels>().TakeElectric();
-                Fuel.GetComponent<Fuels>().AddHydrogen();
-                Sup.GetComponent<Supplies>().AddOxygen();
+                GenerateHyOx();
             }
         }
         if (HyOxBool5 == true)
@@ -116,10 +109,7 @@ public class HyOxGenerator : MonoBehaviour
             if (elapsed5 >= 1f)
             {
                 elapsed5 = elapsed5 % 1f;
-                Sup.GetComponent<Supplies>().TakeWater();
-                Fuel.GetComponent<Fuels>().TakeElectric();
-                Fuel.GetComponent<Fuels>().AddHydrogen();
-                Sup.GetComponent<Supplies>().AddOxygen();
+                GenerateHyOx();
             }
         }
         if (HyOxBool6 == true)
@@ -128,11 +118,50 @@ public class HyOxGenerator : MonoBehaviour
             if (elapsed6 >= 0.5f)
             {
                 elapsed6 = elapsed6 % 1f;
-                Sup.GetComponent<Supplies>().TakeWater();
-                Fuel.GetComponent<Fuels>().TakeElectric();
-                Fuel.GetComponent<Fuels>().AddHydrogen();
-                Sup.GetComponent<Supplies>().AddOxygen();
+                GenerateHyOx();
             }
+        }
+    }
+    void GenerateHyOx()
+    {
+        if (ChekEnWa >= 1)
+        {
+            if (fuels.HydrogenStorage > fuels.ChekHy)
+            {
+                if (supplies.OxygenStorage > supplies.ChekOx)
+                {
+                    Sup.GetComponent<Supplies>().TakeWater();
+                    Sup.GetComponent<Supplies>().TakeEnergy();
+                    Fuel.GetComponent<Fuels>().AddHydrogen();
+                    Sup.GetComponent<Supplies>().AddOxygen();
+                }
+            }
+        }
+    }
+    void ChekingHyOx()
+    {
+        if (supplies.ChekWa <= 0)
+        {
+            DobleChek = 0;
+        }
+        if (supplies.ChekEn <= 0)
+        {
+            DobleChek = 0;
+        }
+        if (supplies.ChekWa >= 1)
+        {
+            if (supplies.ChekEn >= 1)
+            {
+                DobleChek = 1;
+            }
+        }
+        if (supplies.ChekWa >= 1)
+        {
+            ChekEnWa += supplies.ChekWa * DobleChek;
+        }
+        if (supplies.ChekEn >= 1)
+        {
+            ChekEnWa += supplies.ChekEn * DobleChek;
         }
     }
 }

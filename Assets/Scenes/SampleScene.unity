@@ -1731,7 +1731,7 @@ GameObject:
   - component: {fileID: 388397246}
   m_Layer: 0
   m_Name: GeneratorsManager
-  m_TagString: MaterialManager
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1748,6 +1748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4921ed4686b154eecb5d9c3c8c4c7087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  supplies: {fileID: 1409423997}
+  fuels: {fileID: 528904537}
   Sup: {fileID: 1409423996}
   Fuel: {fileID: 528904535}
   HyOxLvl0: {fileID: 1007691583}
@@ -3206,6 +3208,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31383b05161f4391b22b494c069ae42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChekFuel: 0
+  ChekHy: 0
+  ChekEl: 0
+  ChekNu: 0
+  ChekWar: 0
+  HydrogenStorage: 0
+  ElectricStorage: 0
+  NuclearStorage: 0
+  WarpStorage: 0
   HydrogenStorageModule: 50
   ElectricStorageModule: 50
   NuclearStorageModule: 50
@@ -5311,6 +5322,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DethUI: {fileID: 945393658}
+  ChekSup: 0
+  ChekOx: 0
+  ChekWa: 0
+  ChekFo: 0
+  ChekEn: 0
+  OxygenStorage: 0
+  WaterStorage: 0
+  FoodStorage: 0
+  EnergyStorage: 0
   OxygenStorageModule: 50
   WaterStorageModule: 50
   FoodStorageModule: 50
