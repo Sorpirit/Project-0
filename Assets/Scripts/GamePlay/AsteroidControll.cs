@@ -68,7 +68,6 @@ public class AsteroidControll : MonoBehaviour
 
     private void crateSmallerAsteroid()
     {
-        Mat.GetComponent<Materials>().AddMaterial0();
         Sup.GetComponent<Supplies>().AddWater();
         Sup.GetComponent<Supplies>().AddWater();
         Sup.GetComponent<Supplies>().AddWater();
