@@ -177,7 +177,7 @@ public class Fuels : MonoBehaviour
         if (Warp == 0)
         {
             ChekFuel = 0;
-            ChekFuel = 0;
+            ChekWar = 0;
         }
         ChekHy = Hydrogen;
         ChekEl = Electric;
