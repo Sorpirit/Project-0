@@ -40,6 +40,7 @@ public class Supplies : MonoBehaviour
 
     GameObject Alient;
     int index;
+    int OldAli = 0;
 
     public Text OxygenText;
     public Text WaterText;
@@ -49,6 +50,11 @@ public class Supplies : MonoBehaviour
 
     void Update()
     {
+        if (AlientAmount <= OldAli - 1)
+        {
+            index = Random.Range(0, AllAlients.Length);
+            AlientAmount = OldAli;
+        }
         AllAlients = GameObject.FindGameObjectsWithTag("Alient");
         if (AlientAmount >= 2)
         {
@@ -58,7 +64,10 @@ public class Supplies : MonoBehaviour
         {
             Alient = GameObject.FindGameObjectWithTag("Alient");
         }
-        index = Random.Range(0, AllAlients.Length);
+        if (index <= -1)
+        {
+            index = 0;
+        }
         AlientAmount = 0;
         foreach (GameObject K in AllAlients)
         {
