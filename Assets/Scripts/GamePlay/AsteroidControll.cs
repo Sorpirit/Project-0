@@ -3,6 +3,7 @@
 public class AsteroidControll : MonoBehaviour
 {
     GameObject Mat;
+    GameObject Sup;
 
     [SerializeField] private float maxHp;
     private float hp;
@@ -19,6 +20,7 @@ public class AsteroidControll : MonoBehaviour
     private void Start()
     {
         Mat = GameObject.FindGameObjectWithTag("MaterialManager");
+        Sup = GameObject.FindGameObjectWithTag("SuppliesManager");
 
         hp = maxHp;
 
@@ -67,6 +69,11 @@ public class AsteroidControll : MonoBehaviour
     private void crateSmallerAsteroid()
     {
         Mat.GetComponent<Materials>().AddMaterial0();
+        Sup.GetComponent<Supplies>().AddWater();
+        Sup.GetComponent<Supplies>().AddWater();
+        Sup.GetComponent<Supplies>().AddWater();
+        Sup.GetComponent<Supplies>().AddWater();
+        Sup.GetComponent<Supplies>().AddWater();
 
         GameObject aster = Instantiate(asteroid, transform.position,Quaternion.identity);
 
