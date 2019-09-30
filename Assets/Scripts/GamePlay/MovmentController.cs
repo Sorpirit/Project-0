@@ -6,6 +6,8 @@ public class MovmentController : MonoBehaviour
 {
     public TakeFuel take;
 
+    public Fuels fuels;
+
     public string HorizAxis;
     public string VertAxis;
 
