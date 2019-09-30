@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TakeFuel : MonoBehaviour
-{
-
+{ 
     public int maxFuel;
     private float fuel;
 

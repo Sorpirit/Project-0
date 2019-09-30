@@ -320,4 +320,8 @@ public class Supplies : MonoBehaviour
         ChekFo = Food;
         ChekEn = Energy;
     }
+    public void Upgrade()
+    {
+        OxygenStorage += 20;
+    }
 }
