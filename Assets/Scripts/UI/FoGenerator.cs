@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FoGenerator : MonoBehaviour
 {
-    int DobleChek;
-
     public Supplies supplies;
     public Fuels fuels;
 
@@ -31,26 +29,6 @@ public class FoGenerator : MonoBehaviour
     }
     void GenerateHyOx()
     {
-        if (supplies.ChekFo < supplies.FoodStorage - 2)
-        {
-            if (supplies.ChekEn >= 1)
-            {
-                if (supplies.ChekOx >= 1)
-                {
-                    if (supplies.ChekWa >= 1)
-                    {
-                        if (supplies.FoodStorage > supplies.ChekFo)
-                        {
-                            supplies.TakeEnergy();
-                            supplies.TakeOxygen();
-                            supplies.TakeWater();
-                            supplies.AddFood();
-                            supplies.AddFood();
-                            supplies.AddFood();
-                        }
-                    }
-                }
-            }
-        }
+        
     }
 }

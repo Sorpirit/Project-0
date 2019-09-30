@@ -68,11 +68,6 @@ public class AsteroidControll : MonoBehaviour
 
     private void crateSmallerAsteroid()
     {
-        Sup.GetComponent<Supplies>().AddWater();
-        Sup.GetComponent<Supplies>().AddWater();
-        Sup.GetComponent<Supplies>().AddWater();
-        Sup.GetComponent<Supplies>().AddWater();
-        Sup.GetComponent<Supplies>().AddWater();
 
         GameObject aster = Instantiate(asteroid, transform.position,Quaternion.identity);
 

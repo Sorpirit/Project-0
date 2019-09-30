@@ -1427,6 +1427,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: DropDownMenu (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Text
+      value: Material0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 224753064050901330, guid: e3f215165fb7a4b3da5adb5082f62040,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1632,41 +1667,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Text
-      value: Material0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 224753064050901343, guid: e3f215165fb7a4b3da5adb5082f62040,
         type: 3}
       propertyPath: m_Color.a
@@ -1796,8 +1796,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   supplies: {fileID: 1409423997}
   fuels: {fileID: 528904537}
+  generatRate: 1
   MakeEnergy: 0
   MakeElectric: 0
+  enPreSecond: 0
+  elPreSecond: 0
 --- !u!114 &388397249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1952,6 +1955,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1956314595}
     m_Modifications:
+    - target: {fileID: 581328192497371048, guid: bcf2ed67262e54491b091f431035fff8,
+        type: 3}
+      propertyPath: m_Name
+      value: JustSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 803356132327235576, guid: bcf2ed67262e54491b091f431035fff8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2061,11 +2069,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 581328192497371048, guid: bcf2ed67262e54491b091f431035fff8,
-        type: 3}
-      propertyPath: m_Name
-      value: JustSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6016280011901000604, guid: bcf2ed67262e54491b091f431035fff8,
         type: 3}
@@ -3241,19 +3244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31383b05161f4391b22b494c069ae42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChekFuel: 0
-  ChekHy: 0
-  ChekEl: 0
-  ChekNu: 0
-  ChekWar: 0
-  HydrogenStorage: 0
-  ElectricStorage: 0
-  NuclearStorage: 0
-  WarpStorage: 0
-  HydrogenStorageModule: 50
-  ElectricStorageModule: 50
-  NuclearStorageModule: 50
-  WarpStorageModule: 50
+  hyCapacyti: 12
+  elCapacyti: 154
+  nuCapacyti: 10
+  warCapacyti: 50
   HydrogenText: {fileID: 411891183}
   ElectricText: {fileID: 650515653}
   NuclearText: {fileID: 1758436161}
@@ -3292,7 +3286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -96.70001, y: 25.600006}
+  m_AnchoredPosition: {x: -96.70001, y: 25.600037}
   m_SizeDelta: {x: 160, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592274534
@@ -4770,6 +4764,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: DropDownMenu (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Text
+      value: Hydrogen
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8274979
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6650944
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224753064050901330, guid: e3f215165fb7a4b3da5adb5082f62040,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4974,41 +5003,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Text
-      value: Hydrogen
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.8274979
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.6650944
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224753064050901343, guid: e3f215165fb7a4b3da5adb5082f62040,
         type: 3}
@@ -5385,20 +5379,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DethUI: {fileID: 945393658}
-  ChekSup: 0
-  ChekOx: 0
-  ChekWa: 0
-  ChekFo: 0
-  ChekEn: 0
-  OxygenStorage: 0
-  WaterStorage: 0
-  FoodStorage: 0
-  EnergyStorage: 0
-  OxygenStorageModule: 50
-  WaterStorageModule: 50
-  FoodStorageModule: 50
-  EnergyStorageModule: 50
   AlientStorageModule: 50
+  oxCapacyti: 150
+  waCapacyti: 50
+  foCapacyti: 500
+  enCapacyti: 12
   OxygenText: {fileID: 1865334063}
   WaterText: {fileID: 2043893964}
   FoodText: {fileID: 1073351271}
@@ -5429,6 +5414,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DropDownMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Oxygen : '
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.61552155
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8874753
+      objectReference: {fileID: 0}
+    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224753064050901330, guid: e3f215165fb7a4b3da5adb5082f62040,
         type: 3}
@@ -5634,46 +5659,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Oxygen : '
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.61552155
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9811321
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.8874753
-      objectReference: {fileID: 0}
-    - target: {fileID: 224753065349426293, guid: e3f215165fb7a4b3da5adb5082f62040,
-        type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224753064050901343, guid: e3f215165fb7a4b3da5adb5082f62040,
         type: 3}
@@ -7950,6 +7935,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4930933645787826543, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+        type: 3}
+      propertyPath: isDebuging
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7542949454887338243, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8025,11 +8015,6 @@ PrefabInstance:
       propertyPath: fuels
       value: 
       objectReference: {fileID: 528904537}
-    - target: {fileID: 4930933645787826543, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
-        type: 3}
-      propertyPath: isDebuging
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbd71757ce5ca1a46aa38fdb97acc87d, type: 3}
 --- !u!1001 &8003026827418132560

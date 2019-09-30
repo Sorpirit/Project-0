@@ -11,11 +11,8 @@ public class MyAlient : MonoBehaviour
         elapsed += Time.deltaTime;
         if (elapsed >= 60f)
         {
-            elapsed = elapsed % 1f;
-            Sup.GetComponent<Supplies>().TakeOxygen();
-            Sup.GetComponent<Supplies>().TakeWater();
-            Sup.GetComponent<Supplies>().TakeFood();
-            Sup.GetComponent<Supplies>().TakeEnergy();
+            elapsed = 0f;
+
         }
     }
 }
