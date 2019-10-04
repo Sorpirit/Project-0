@@ -28,6 +28,11 @@ public class Storage : Upgradeable
     }
     public int Level { get { return level; } }
 
+    private bool ChekRes(float storage)
+    {
+        return storage < 0 || storage > maxCapacity;
+    }
+
     public int GetLevel()
     {
         return level;

@@ -17,7 +17,6 @@ public class TakeFuel : MonoBehaviour
     public void UseFuel(float value)
     {
         fuel -= Time.deltaTime * value;
-        Debug.Log(fuel + " fuel");
         if (fuel < 0) fuel = 0;
     }
 
@@ -40,7 +39,7 @@ public class TakeFuel : MonoBehaviour
 
     private void Debuging()
     {
-        Debug.Log("mfuel = " + maxFuel + " .\nFule =  .");
+        Debug.Log("mfuel = " + maxFuel + " .\nFule = "+ fuel +".");
     }
 
 }

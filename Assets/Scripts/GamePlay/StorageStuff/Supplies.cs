@@ -44,7 +44,7 @@ public class Supplies : MonoBehaviour
         SetText();
     }
 
-    private void SetText()
+    public void SetText()
     {
         OxygenText.text = "Oxygen: " + OxStorageModule.StroageVal + " l ";
         WaterText.text = "Water: " + WaStorageModule.StroageVal + " l ";
@@ -52,4 +52,23 @@ public class Supplies : MonoBehaviour
         EnergyText.text = "Energy: " + EnStorageModule.StroageVal + " A/h";
     }
 
+    public void TakeAll(float amount)
+    {
+        OxStorageModule.StroageVal -= amount;
+        FoStorageModule.StroageVal -= amount;
+        WaStorageModule.StroageVal -= amount;
+        EnStorageModule.StroageVal -= amount;
+
+        SetText();
+    }
+
+    public void AddAll(float amount)
+    {
+        OxStorageModule.StroageVal += amount;
+        FoStorageModule.StroageVal += amount;
+        WaStorageModule.StroageVal += amount;
+        EnStorageModule.StroageVal += amount;
+
+        SetText();
+    }
 }
