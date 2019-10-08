@@ -42,7 +42,6 @@ public class AsteroidControll : MonoBehaviour
         {
             hitAnim.Stop();
             Instantiate(explosion, transform.position, Quaternion.identity).Play();
-            crateSmallerAsteroid();
             Destroy(gameObject);
         }
 
@@ -64,23 +63,5 @@ public class AsteroidControll : MonoBehaviour
         float chengVal = hp / maxHp;
         Color nColor = new Color(initialColor.r, initialColor.g * chengVal, initialColor.b * chengVal);
         sprite.color = nColor;
-    }
-
-    private void crateSmallerAsteroid()
-    {
-
-        GameObject aster = Instantiate(asteroid, transform.position,Quaternion.identity);
-
-        float xScale = Random.Range( transform.localScale.x * 0.1f, transform.localScale.x);
-        float yScale = Random.Range( transform.localScale.y * 0.1f, transform.localScale.y);
-
-        aster.transform.localScale = new Vector3(xScale,yScale,1);
-
-        Rigidbody2D asterRb = aster.GetComponent<Rigidbody2D>();
-        if(asterRb != null)
-        {
-            
-            asterRb.AddForce(new Vector2(xScale,yScale).normalized, ForceMode2D.Impulse);
-        }
     }
 }
