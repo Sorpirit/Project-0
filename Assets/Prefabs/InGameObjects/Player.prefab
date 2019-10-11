@@ -6282,8 +6282,10 @@ GameObject:
   - component: {fileID: 7542949454887338241}
   - component: {fileID: 7542949454887338246}
   - component: {fileID: 7542949454887338247}
+  - component: {fileID: 9209296454413412035}
   - component: {fileID: 776626705}
   - component: {fileID: 4930933645787826543}
+  - component: {fileID: 8264294076188330195}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -6379,6 +6381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   take: {fileID: 0}
+  fuels: {fileID: 0}
   HorizAxis: Horizontal
   VertAxis: Vertical
   turnSpeed: 5
@@ -6388,6 +6391,29 @@ MonoBehaviour:
   body: {fileID: 7542949454887338241}
   invertInput: 0
   autoBalance: 1
+--- !u!114 &9209296454413412035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7542949454887338244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825b697a83b4b4d0fa1dd43fecfad414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DethUI: {fileID: 0}
+  AlientStorageModule: 50
+  oxCapacyti: 30
+  waCapacyti: 30
+  foCapacyti: 30
+  enCapacyti: 30
+  OxygenText: {fileID: 0}
+  WaterText: {fileID: 0}
+  FoodText: {fileID: 0}
+  EnergyText: {fileID: 0}
+  AlientText: {fileID: 0}
 --- !u!114 &776626705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6429,6 +6455,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFuel: 30
+  isDebuging: 0
+--- !u!114 &8264294076188330195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7542949454887338244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf81b28555ad4664a8d3bae49aea523e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statrtAliensCount: 1
+  simulationSpeed: 1
+  resMult: 1
+  supplies: {fileID: 9209296454413412035}
+  alien: {fileID: 4092090959162300044, guid: 94446ac93ddbfd64994175864093e165, type: 3}
 --- !u!1 &7641099539474587403
 GameObject:
   m_ObjectHideFlags: 0

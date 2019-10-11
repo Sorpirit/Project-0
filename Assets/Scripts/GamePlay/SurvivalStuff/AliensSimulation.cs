@@ -12,11 +12,20 @@ public class AliensSimulation : MonoBehaviour
     [SerializeField]private float resMult = 1;
     [SerializeField]private Supplies supplies;
 
+    [SerializeField]private GameObject alien;
+    private List<GameObject> aliens;
+
     private float simulationTimer;
 
     private void Start()
     {
         aliensCount = statrtAliensCount;
+        aliens = new List<GameObject>();
+        for(int al = 0; al < statrtAliensCount; al++)
+        {
+
+            spawnNewAlien();
+        }
     }
 
     private void Update()
@@ -42,8 +51,45 @@ public class AliensSimulation : MonoBehaviour
         {
             Debug.Log("Kill:" + aliansTokill);
             aliensCount -= aliansTokill;
+            for(int al = 0; al < aliansTokill; al++)
+            {
+                killRandAlien();
+            }
         }
 
         supplies.TakeAll(resMult * aliensCount);
+    }
+    private void spawnNewAlien()
+    {
+        GameObject newAlien = Instantiate(alien,transform.position, Quaternion.identity);
+        aliens.Add(newAlien);
+        takeRandRes(5);
+    }
+   
+
+    private void killRandAlien()
+    {
+        int index = Random.Range(0, aliens.Count);
+        Destroy(aliens[index]);
+        aliens.RemoveAt(index);
+    }
+    private void takeRandRes(int val)
+    {
+        int index = Random.Range(0, 3);
+        switch (index)
+        {
+            case 0:
+                supplies.WaStorageModule.StroageVal -= val;
+                break;
+            case 1:
+                supplies.OxStorageModule.StroageVal -= val;
+                break;
+            case 2:
+                supplies.FoStorageModule.StroageVal -= val;
+                break;
+            case 3:
+                supplies.EnStorageModule.StroageVal -= val;
+                break;
+        }
     }
 }

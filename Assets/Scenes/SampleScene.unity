@@ -4363,7 +4363,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7542949455700351237}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589659091}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6390bf8e1809a4a59932536c07af2bc0, type: 3}
@@ -7808,51 +7808,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525296689}
   m_CullTransparentMesh: 0
---- !u!1 &1589659091 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7542949454887338244, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+--- !u!114 &1589659097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9209296454413412035, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
     type: 3}
   m_PrefabInstance: {fileID: 7542949455700351237}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1589659092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589659091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf81b28555ad4664a8d3bae49aea523e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statrtAliensCount: 1
-  simulationSpeed: 1
-  resMult: 1
-  supplies: {fileID: 1589659097}
---- !u!114 &1589659097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589659091}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 825b697a83b4b4d0fa1dd43fecfad414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DethUI: {fileID: 945393658}
-  AlientStorageModule: 50
-  oxCapacyti: 30
-  waCapacyti: 30
-  foCapacyti: 30
-  enCapacyti: 30
-  OxygenText: {fileID: 1865334063}
-  WaterText: {fileID: 2043893964}
-  FoodText: {fileID: 1073351271}
-  EnergyText: {fileID: 1329487919}
-  AlientText: {fileID: 592274534}
 --- !u!1 &1629441284
 GameObject:
   m_ObjectHideFlags: 0
@@ -10107,6 +10074,7 @@ MonoBehaviour:
   simulationSpeed: 1
   resMult: 1
   supplies: {fileID: 0}
+  alien: {fileID: 0}
 --- !u!1 &2109778921
 GameObject:
   m_ObjectHideFlags: 3
@@ -10766,6 +10734,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9209296454413412035, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+        type: 3}
+      propertyPath: DethUI
+      value: 
+      objectReference: {fileID: 945393658}
+    - target: {fileID: 9209296454413412035, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+        type: 3}
+      propertyPath: OxygenText
+      value: 
+      objectReference: {fileID: 1865334063}
+    - target: {fileID: 9209296454413412035, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+        type: 3}
+      propertyPath: WaterText
+      value: 
+      objectReference: {fileID: 2043893964}
+    - target: {fileID: 9209296454413412035, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+        type: 3}
+      propertyPath: FoodText
+      value: 
+      objectReference: {fileID: 1073351271}
+    - target: {fileID: 9209296454413412035, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+        type: 3}
+      propertyPath: EnergyText
+      value: 
+      objectReference: {fileID: 1329487919}
+    - target: {fileID: 9209296454413412035, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+        type: 3}
+      propertyPath: AlientText
+      value: 
+      objectReference: {fileID: 592274534}
+    - target: {fileID: 8264294076188330195, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
+        type: 3}
+      propertyPath: supplies
+      value: 
+      objectReference: {fileID: 1589659097}
     - target: {fileID: 7542949454887338244, guid: fbd71757ce5ca1a46aa38fdb97acc87d,
         type: 3}
       propertyPath: m_Name
