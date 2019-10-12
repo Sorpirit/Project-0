@@ -14,6 +14,7 @@ public class Panels : MonoBehaviour
     GameObject Graphix;
     GameObject Social;
     GameObject Help;
+    GameObject LoadMenu;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class Panels : MonoBehaviour
         Graphix = GameObject.FindGameObjectWithTag("GraphixPanel");
         Social = GameObject.FindGameObjectWithTag("SocialPanel");
         Help = GameObject.FindGameObjectWithTag("HelpPanel");
+        LoadMenu = GameObject.FindGameObjectWithTag("LoadMenu");
 
         Settings.SetActive(false);
         General.SetActive(false);
@@ -37,6 +39,7 @@ public class Panels : MonoBehaviour
         Graphix.SetActive(false);
         Social.SetActive(false);
         Help.SetActive(false);
+        LoadMenu.SetActive(false);
     }
     public void GoToSettings()
     {
@@ -105,5 +108,13 @@ public class Panels : MonoBehaviour
         Debug.Log("going to Help settings...");
         Menu.SetActive(true);
         Settings.SetActive(false);
+        LoadMenu.SetActive(false);
+    }
+    public void GoToLoadMenu()
+    {
+        //Load menu is where you can load your saved games
+        Debug.Log("going to Help LoadMenu...");
+        LoadMenu.SetActive(true);
+        Menu.SetActive(false);
     }
 }

@@ -70,4 +70,13 @@ public class MovmentController : MonoBehaviour
 
         if (body.velocity.magnitude < 0.2f) body.velocity = Vector2.zero;
     }
+    //Adding stuf for Save system lern more about it here https://www.youtube.com/watch?v=XOjd_qU2Ido
+    public void SaveData()
+    {
+        SaveGame.saveData(this);
+    }
+    public void LoadGame()
+    {
+        // I will do this later
+    }
 }

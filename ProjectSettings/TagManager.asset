@@ -34,6 +34,7 @@ TagManager:
   - Alient
   - DethPanel
   - AlientStorageModule
+  - LoadMenu
   layers:
   - Default
   - TransparentFX
