@@ -8,7 +8,7 @@ public class AliensSimulation : MonoBehaviour
     [Range(0f,10f)]public int simulationSpeed = 1;
 
     private int aliensCount;
-    private const int tickRate = 2;
+    private const int tickRate = 60;
     [SerializeField]private float resMult = 1;
     [SerializeField]private Supplies supplies;
 
