@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Dropdown : MonoBehaviour, IPointerClickHandler
+public class Dropdown : MonoBehaviour
 {
     public RectTransform container;
-    public bool isOpen;
+    public static bool isOpen;
     public int i;
 
     void Start()
@@ -18,12 +18,12 @@ public class Dropdown : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         Vector3 scale = container.localScale;
-        //Do you know what dose [isOpen ? 1 : 0] mean?
+        //Do you know what dose [isOpen ? 1 : 0] mean? approximately
         scale.y = Mathf.Lerp(scale.y, isOpen ? 1 : 0, Time.deltaTime * i);
         container.localScale = scale;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void Drop()
     {
         // Bed way to implement tugle button
         /*if (isOpen == true)
